@@ -1,6 +1,9 @@
 # Summaries
 Command line tool for retrieving NCBI gene summaries. Can get summaries for a
-single gene or read gene symbols from a file. 
+single gene or read gene symbols from a file. All the heavy lifting is done by
+the [eutils](https://github.com/fjukstad/kvik/tree/master/eutils) and
+[genenames](https://github.com/fjukstad/kvik/tree/master/genenames)  packages in
+[Kvik](http://github.com/fjukstad/kvik). 
 
 # Example
 Single gene symbol: 
@@ -28,8 +31,9 @@ Read a file with gene symbols:
 ```
 $ summaries -i example/example.csv -o example/example-with-summaries.csv
 ```
-The output is stored in `example-with-summaries.csv`. Check [example/](example/)
-for example input and output.
+The output is stored in `example/example-with-summaries.csv`.  Check
+[example/](example/) for example input and output.
+
 
 
 # Input 
