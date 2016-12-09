@@ -53,20 +53,20 @@ func main() {
 	for scanner.Scan() {
 		gene := scanner.Text()
 		genes = append(genes, gene)
-
 		doc, err := genenames.GetDoc(gene)
 		if err != nil {
-			fmt.Println("Could not convert gene symbol to entrez id", err)
-			return
+			fmt.Println("Warning: Skipping gene"+gene, err)
+			summaries = append(summaries, "")
+			continue
 		}
 
 		geneSummary, err := eutils.GeneSummary(doc.EntrezId)
 		if err != nil {
 			fmt.Println("Warning: Could not get summary for", gene, "continuing")
+			summaries = append(summaries, "")
 			continue
 		}
 		summary := geneSummary.Summary
-
 		summaries = append(summaries, summary)
 	}
 
