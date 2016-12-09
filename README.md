@@ -26,9 +26,10 @@ been described. A related pseudogene, which is also located on chromosome
 
 Read a file with gene symbols: 
 ```
-$ summaries -i example.csv -o example-with-summaries.csv
+$ summaries -i example/example.csv -o example/example-with-summaries.csv
 ```
-The output is stored in `example-with-summaries.csv`. 
+The output is stored in `example-with-summaries.csv`. Check [example/](example/)
+for example input and output.
 
 
 # Input 
