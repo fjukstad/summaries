@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/fjukstad/kvik/eutils"
 	"github.com/fjukstad/kvik/genenames"
@@ -52,10 +53,12 @@ func main() {
 	scanner := bufio.NewScanner(f)
 	for scanner.Scan() {
 		gene := scanner.Text()
+		gene = strings.Trim(gene, "\"")
 		genes = append(genes, gene)
+
 		doc, err := genenames.GetDoc(gene)
 		if err != nil {
-			fmt.Println("Warning: Skipping gene"+gene, err)
+			fmt.Println("Warning: Skipping gene", gene, err)
 			summaries = append(summaries, "")
 			continue
 		}
