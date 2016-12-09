@@ -14,7 +14,7 @@ import (
 func main() {
 	inputFilename := flag.String("i", "", "Input filename. Text file with one gene name per line.")
 	outputFilename := flag.String("o", "", "Output filename.")
-	gene := flag.String("gene", "", "Get summary for a single gene")
+	gene := flag.String("symbol", "", "Get summary for a single gene")
 
 	flag.Parse()
 
